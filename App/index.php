@@ -35,5 +35,5 @@ $latitude = $currentPosition[0]->latitude;
 
 $distance = $satellite->haversineGreatCircleDistance($latitude, $longitude, $chosenLatitude, $chosenLongitude );
 
-echo 'The distance between two coordinates is:'.$distance;
+echo 'The distance between two coordinates is:'.$distance.'KM';
 echo "\n";
