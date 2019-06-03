@@ -37,7 +37,7 @@ class AvantiMenuCommand extends Command
 
         $session = new Satellite();
 
-        $choices = ['A' => 'List Satellites', 'B' => 'Get Satellite Report', 'C'=>'Get Satellite Positions', 'D'=>'Calculate Distance', false=>'Exit Application'];
+        $choices = ['A' => 'List Satellites', 'B' => 'Get Satellite Report', 'C' => 'Get Satellite Positions', 'D' => 'Calculate Distance', false => 'Exit Application'];
 
         echo "\n";
 
@@ -108,6 +108,6 @@ class AvantiMenuCommand extends Command
         $this->io->writeln('Calculate Distance');
         $longitude = (int)$this->io->ask('Longitude:');
         $latitude = (int)$this->io->ask('Latitude:');
-        echo $session->haversineGreatCircleDistance($longitude, $latitude, $reportLatitude, $reportLongitude) .' KM';
+        echo $session->haversineGreatCircleDistance($longitude, $latitude, $reportLatitude, $reportLongitude) . ' KM';
     }
 }

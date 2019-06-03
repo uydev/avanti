@@ -9,15 +9,17 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Exception\GuzzleException;
 
 
-class Satellite {
+class Satellite
+{
 
     /**
      * Satellite constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->_client = new Client([
             'base_uri' => 'https://api.wheretheiss.at',
-            'timeout'  => 2.0,
+            'timeout' => 2.0,
         ]);
     }
 
@@ -25,7 +27,8 @@ class Satellite {
      * @return mixed|\Psr\Http\Message\ResponseInterface|string
      * @throws GuzzleException
      */
-    public function listSatellites() {
+    public function listSatellites()
+    {
 
         $request = new Request('GET', 'https://api.wheretheiss.at/v1/satellites/');
         $response = $this->_client->send($request, ['timeout' => 10]);
@@ -39,9 +42,10 @@ class Satellite {
      * @return mixed|\Psr\Http\Message\ResponseInterface|string
      * @throws GuzzleException
      */
-    public function getSatelliteReport($id) {
+    public function getSatelliteReport($id)
+    {
 
-        $request = new Request('GET', 'https://api.wheretheiss.at/v1/satellites/'.$id);
+        $request = new Request('GET', 'https://api.wheretheiss.at/v1/satellites/' . $id);
         $response = $this->_client->send($request, ['timeout' => 10]);
         $response = $response->getBody()->getContents();
 
@@ -55,8 +59,9 @@ class Satellite {
      * @return mixed|\Psr\Http\Message\ResponseInterface|string
      * @throws GuzzleException
      */
-    public function getSatellitePositions($id, $timestamps) {
-        $request = new Request('GET', 'https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps='.$timestamps.'&units=miles');
+    public function getSatellitePositions($id, $timestamps)
+    {
+        $request = new Request('GET', 'https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=' . $timestamps . '&units=miles');
         $response = $this->_client->send($request, ['timeout' => 10]);
         $response = $response->getBody()->getContents();
 

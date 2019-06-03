@@ -19,11 +19,11 @@ echo "List of Satellites:\n";
 echo $satellite->listSatellites();
 echo "\n";
 
-echo "Report for Satellite with ID:".$id. "\n";
+echo "Report for Satellite with ID:" . $id . "\n";
 echo $report = $satellite->getSatelliteReport($id);
 echo "\n";
 
-echo "Satellite with ID has Position:".$id. "\n";
+echo "Satellite with ID has Position:" . $id . "\n";
 $currentPosition = $satellite->getSatellitePositions($id, $timestamp);
 echo $currentPosition;
 echo "\n";
@@ -33,7 +33,7 @@ $currentPosition = json_decode($currentPosition);
 $longitude = $currentPosition[0]->longitude;
 $latitude = $currentPosition[0]->latitude;
 
-$distance = $satellite->haversineGreatCircleDistance($latitude, $longitude, $chosenLatitude, $chosenLongitude );
+$distance = $satellite->haversineGreatCircleDistance($latitude, $longitude, $chosenLatitude, $chosenLongitude);
 
-echo 'The distance between two coordinates is:'.$distance.'KM';
+echo 'The distance between two coordinates is:' . $distance . 'KM';
 echo "\n";
