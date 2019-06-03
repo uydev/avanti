@@ -37,5 +37,3 @@ $distance = $satellite->haversineGreatCircleDistance($latitude, $longitude, $cho
 
 echo 'The distance between two coordinates is:'.$distance;
 echo "\n";
-
-var_dump($chosenLatitude);

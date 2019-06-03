@@ -9,8 +9,6 @@ use GuzzleHttp\Exception\GuzzleException;
 
 final class AvantiTest extends TestCase
 {
-    protected $import;
-
     /**
      * AvantiTest constructor.
      */
